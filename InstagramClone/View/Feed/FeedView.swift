@@ -11,9 +11,11 @@ struct FeedView: View {
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                ForEach(0 ..< 2) { _ in
-                    FeedCell(geometryProxy: geometry)
-                }
+                LazyVStack(spacing: 32) {
+                    ForEach(0 ..< 2) { _ in
+                        FeedCell(geometryProxy: geometry)
+                    }
+                }.padding(.top)
             }
         }
     }

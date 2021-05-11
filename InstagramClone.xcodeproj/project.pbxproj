@@ -19,6 +19,8 @@
 		687B34D32649626900B9863D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 687B34D22649626900B9863D /* Preview Assets.xcassets */; };
 		68B498B1264AF351001E3CE5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B498B0264AF351001E3CE5 /* SearchBar.swift */; };
 		68B498B3264AF6E6001E3CE5 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B498B2264AF6E6001E3CE5 /* PostGridView.swift */; };
+		68B498B5264AF8FC001E3CE5 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B498B4264AF8FC001E3CE5 /* UserCell.swift */; };
+		68B498B7264AF908001E3CE5 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B498B6264AF908001E3CE5 /* UserListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		687B34D42649626900B9863D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B498B0264AF351001E3CE5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		68B498B2264AF6E6001E3CE5 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
+		68B498B4264AF8FC001E3CE5 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		68B498B6264AF908001E3CE5 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				68B498B2264AF6E6001E3CE5 /* PostGridView.swift */,
+				68B498B4264AF8FC001E3CE5 /* UserCell.swift */,
+				68B498B6264AF908001E3CE5 /* UserListView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -313,8 +319,10 @@
 				68045F3E264AB20B00E998F1 /* FeedView.swift in Sources */,
 				68B498B1264AF351001E3CE5 /* SearchBar.swift in Sources */,
 				68045F48264ABCA300E998F1 /* FeedCell.swift in Sources */,
+				68B498B7264AF908001E3CE5 /* UserListView.swift in Sources */,
 				68045F44264AB27500E998F1 /* ProfileView.swift in Sources */,
 				68B498B3264AF6E6001E3CE5 /* PostGridView.swift in Sources */,
+				68B498B5264AF8FC001E3CE5 /* UserCell.swift in Sources */,
 				687B34CC2649626500B9863D /* InstagramCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

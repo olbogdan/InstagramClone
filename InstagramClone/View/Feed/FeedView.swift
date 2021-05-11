@@ -9,7 +9,13 @@ import SwiftUI
 
 struct FeedView: View {
     var body: some View {
-        Text("Feed")
+        GeometryReader { geometry in
+            ScrollView {
+                ForEach(0 ..< 2) { _ in
+                    FeedCell(geometryProxy: geometry)
+                }
+            }
+        }
     }
 }
 

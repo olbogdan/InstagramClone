@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @State private var imagePickerPresented = false
+    @State private var selectedImage: UIImage?
+    @State private var userImage: Image?
     @State private var email: String = ""
     @State private var userName: String = ""
     @State private var fullName: String = ""
@@ -19,14 +22,28 @@ struct RegistrationView: View {
             LinearGradient(gradient: Gradient(colors: [Color.purple, Color.blue]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             VStack {
-                Button(action: {}) {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .renderingMode(.template)
-                        .scaledToFit()
-                        .foregroundColor(.white)
-                        .frame(width: 140, height: 140)
-                }.padding()
+                Button(action: {
+                    imagePickerPresented = true
+                }) {
+                    if let image = userImage {
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .frame(width: 140, height: 140)
+                    } else {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .renderingMode(.template)
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width: 140, height: 140)
+                    }
+                }
+                .sheet(isPresented: $imagePickerPresented, onDismiss: loadImage) {
+                    ImagePicker(image: $selectedImage)
+                }
+                .padding()
 
                 VStack(spacing: 20) {
                     CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
@@ -81,6 +98,13 @@ struct RegistrationView: View {
                 }.padding(.bottom, 16)
             }
         }
+    }
+}
+
+extension RegistrationView {
+    func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        userImage = Image(uiImage: selectedImage)
     }
 }
 

@@ -38,6 +38,7 @@
 		68C81F6C26510600008D3608 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F6B26510600008D3608 /* FirebaseFirestore */; };
 		68C81F6E26510600008D3608 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F6D26510600008D3608 /* FirebaseMessaging */; };
 		68C81F7126511102008D3608 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F7026511102008D3608 /* Kingfisher */; };
+		68C81F7326531832008D3608 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68C81F7226531832008D3608 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		68C81F5E264EBDD0008D3608 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		68C81F60264ECA72008D3608 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		68C81F62265002BA008D3608 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		68C81F7226531832008D3608 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				687B34CB2649626500B9863D /* InstagramCloneApp.swift */,
 				687B34CF2649626900B9863D /* Assets.xcassets */,
 				687B34D42649626900B9863D /* Info.plist */,
+				68C81F7226531832008D3608 /* GoogleService-Info.plist */,
 				687B34D12649626900B9863D /* Preview Content */,
 			);
 			path = InstagramClone;
@@ -359,6 +362,7 @@
 			files = (
 				687B34D32649626900B9863D /* Preview Assets.xcassets in Resources */,
 				687B34D02649626900B9863D /* Assets.xcassets in Resources */,
+				68C81F7326531832008D3608 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

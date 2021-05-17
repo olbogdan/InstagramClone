@@ -16,6 +16,7 @@ struct RegistrationView: View {
     @State private var fullName: String = ""
     @State private var password: String = ""
     @Environment(\.presentationMode) var mode
+    @EnvironmentObject var viewModel: AuthViewModel
 
     var body: some View {
         ZStack {
@@ -75,7 +76,9 @@ struct RegistrationView: View {
                         .padding(.horizontal, 32)
                 }
 
-                Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/) {
+                Button(action: {
+                    viewModel.register(withEmail: email, password: password)
+                }) {
                     Text("Sign Up")
                         .font(.headline)
                         .foregroundColor(.white)

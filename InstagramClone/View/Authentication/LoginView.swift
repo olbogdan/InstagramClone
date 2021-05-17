@@ -10,7 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    
+    @EnvironmentObject var viewModel: AuthViewModel
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -53,15 +54,17 @@ struct LoginView: View {
                         }
                     }
 
-                    Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/) {
-                        Text("Sign In")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(minWidth: 310)
-                            .frame(height: 50)
-                            .background(Color(#colorLiteral(red: 0.9507724643, green: 0.5001342297, blue: 0.6873406172, alpha: 0.5170878715)))
-                            .clipShape(Capsule())
-                            .padding()
+                    Button(action: {
+                        viewModel.login()
+                    }) {
+                            Text("Sign In")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(minWidth: 310)
+                                .frame(height: 50)
+                                .background(Color(#colorLiteral(red: 0.9507724643, green: 0.5001342297, blue: 0.6873406172, alpha: 0.5170878715)))
+                                .clipShape(Capsule())
+                                .padding()
                     }
                     Spacer()
                     NavigationLink(

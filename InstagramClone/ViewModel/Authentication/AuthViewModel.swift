@@ -23,9 +23,8 @@ class AuthViewModel: ObservableObject {
                 return
             }
             
-            guard let user = result?.user else{ return }
+            guard let user = result?.user else { return }
             self.userSession = user
-            
         }
     }
     
@@ -40,7 +39,7 @@ class AuthViewModel: ObservableObject {
                 "profileImageUrl": imageUrl ?? ""
             ]
             
-            Firestore.firestore().collection("users").document(user.uid).setData(data) { error in
+            COLLECTION_USERS.document(user.uid).setData(data) { error in
                 if let error = error {
                     print("DEBUG: upload user data failed: \(error)")
                 }
@@ -72,7 +71,14 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func fetchUser() {}
+    func fetchUser() {
+        guard let uid = userSession?.uid else { return }
+        COLLECTION_USERS.document(uid).getDocument { snapshot, _ in
+            print(snapshot?.data())
+            let user = try? snapshot?.data(as: User.self)
+            print(user)
+        }
+    }
     
     func resetPassword() {}
 }

@@ -41,6 +41,7 @@
 		68C81F7326531832008D3608 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68C81F7226531832008D3608 /* GoogleService-Info.plist */; };
 		68C81F7526531E63008D3608 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F7426531E63008D3608 /* AuthViewModel.swift */; };
 		68C81F77265324BF008D3608 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F76265324BF008D3608 /* ContentView.swift */; };
+		68C81F7926540A1C008D3608 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F7826540A1C008D3608 /* ImageUploader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		68C81F7226531832008D3608 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68C81F7426531E63008D3608 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		68C81F76265324BF008D3608 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		68C81F7826540A1C008D3608 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		68045F2E264AABB700E998F1 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				68C81F7826540A1C008D3608 /* ImageUploader.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				68045F42264AB24C00E998F1 /* NotificationsView.swift in Sources */,
 				68045F46264AB32300E998F1 /* UploadPostView.swift in Sources */,
 				68C81F5F264EBDD0008D3608 /* ResetPasswordView.swift in Sources */,
+				68C81F7926540A1C008D3608 /* ImageUploader.swift in Sources */,
 				685DB3B7264DCE690092F5C9 /* ImagePicker.swift in Sources */,
 				685DB3B5264C88910092F5C9 /* ProfileActionButtonView.swift in Sources */,
 				6822D066264B423500584519 /* UserStatView.swift in Sources */,

@@ -12,7 +12,7 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: Firebase.User?
     
     init() {
-        userSession  = Auth.auth().currentUser
+        userSession = Auth.auth().currentUser
     }
     
     func login() {
@@ -32,7 +32,14 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func signOut() {}
+    func signOut() {
+        userSession = nil
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("error: \(error).")
+        }
+    }
     
     func fetchUser() {}
     

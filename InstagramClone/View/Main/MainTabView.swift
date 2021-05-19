@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @EnvironmentObject var viewModel: AuthViewModel
+    var user: User
     
     var body: some View {
         NavigationView {
@@ -32,10 +33,10 @@ struct MainTabView: View {
                         Image(systemName: "heart")
                     }
                 
-//                ProfileView()
-//                    .tabItem {
-//                        Image(systemName: "person")
-//                    }
+                ProfileView(user: user)
+                    .tabItem {
+                        Image(systemName: "person")
+                    }
             }
             .accentColor(.black)
             .navigationBarTitleDisplayMode(.inline)
@@ -51,11 +52,5 @@ struct MainTabView: View {
         } label: {
             Text("Logout").foregroundColor(.black)
         }
-    }
-}
-
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView()
     }
 }

@@ -45,6 +45,7 @@
 		68C81F8626546CAD008D3608 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F8526546CAD008D3608 /* FirebaseAuth */; };
 		68C81F8826546CAD008D3608 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F8726546CAD008D3608 /* FirebaseFirestore */; };
 		68C81F8A26546CAD008D3608 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F8926546CAD008D3608 /* FirebaseStorage */; };
+		68C81F8C26547128008D3608 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8B26547128008D3608 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		68C81F7826540A1C008D3608 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		68C81F7A26546624008D3608 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		68C81F7C26546860008D3608 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		68C81F8B26547128008D3608 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				68045F3B264AACF900E998F1 /* Authentication */,
 				68045F3A264AACF100E998F1 /* Notifications */,
 				68045F39264AACEC00E998F1 /* Feed */,
+				68C81F8B26547128008D3608 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				68045F48264ABCA300E998F1 /* FeedCell.swift in Sources */,
 				68B498B7264AF908001E3CE5 /* UserListView.swift in Sources */,
 				68B498B9264B013C001E3CE5 /* Extensions.swift in Sources */,
+				68C81F8C26547128008D3608 /* SearchViewModel.swift in Sources */,
 				68045F44264AB27500E998F1 /* ProfileView.swift in Sources */,
 				68B498B3264AF6E6001E3CE5 /* PostGridView.swift in Sources */,
 				68C81F7D26546860008D3608 /* User.swift in Sources */,

@@ -12,7 +12,9 @@ import UIKit
 class AuthViewModel: ObservableObject {
     @Published var userSession: Firebase.User?
     
-    init() {
+    static let shared = AuthViewModel()
+
+    private init() {
         userSession = Auth.auth().currentUser
     }
     

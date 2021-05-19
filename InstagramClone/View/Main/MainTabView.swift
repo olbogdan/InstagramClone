@@ -32,10 +32,10 @@ struct MainTabView: View {
                         Image(systemName: "heart")
                     }
                 
-                ProfileView()
-                    .tabItem {
-                        Image(systemName: "person")
-                    }
+//                ProfileView()
+//                    .tabItem {
+//                        Image(systemName: "person")
+//                    }
             }
             .accentColor(.black)
             .navigationBarTitleDisplayMode(.inline)

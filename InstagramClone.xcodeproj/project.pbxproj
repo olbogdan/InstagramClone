@@ -47,6 +47,7 @@
 		68C81F8A26546CAD008D3608 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F8926546CAD008D3608 /* FirebaseStorage */; };
 		68C81F8C26547128008D3608 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8B26547128008D3608 /* SearchViewModel.swift */; };
 		68C81F8E2656652D008D3608 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8D2656652D008D3608 /* ProfileViewModel.swift */; };
+		68C81F9026566A3A008D3608 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8F26566A3A008D3608 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		68C81F7C26546860008D3608 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		68C81F8B26547128008D3608 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		68C81F8D2656652D008D3608 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		68C81F8F26566A3A008D3608 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				68C81F7826540A1C008D3608 /* ImageUploader.swift */,
+				68C81F8F26566A3A008D3608 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				68045F3E264AB20B00E998F1 /* FeedView.swift in Sources */,
 				68B498B1264AF351001E3CE5 /* SearchBar.swift in Sources */,
 				68B498BD264B1025001E3CE5 /* NotificationCell.swift in Sources */,
+				68C81F9026566A3A008D3608 /* UserService.swift in Sources */,
 				68B498BF264B2ED9001E3CE5 /* ProfileHeaderView.swift in Sources */,
 				68C81F61264ECA72008D3608 /* CustomTextField.swift in Sources */,
 				68045F48264ABCA300E998F1 /* FeedCell.swift in Sources */,

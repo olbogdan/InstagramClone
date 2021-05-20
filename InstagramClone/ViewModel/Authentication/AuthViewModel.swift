@@ -34,7 +34,7 @@ class AuthViewModel: ObservableObject {
     }
     
     fileprivate func updateProfile(user: Firebase.User, withEmail email: String, image: UIImage?, fullName: String, userName: String) {
-        ImageUploader.uploadImage(image: image) { imageUrl in
+        ImageUploader.uploadImage(image: image, type: UploadType.profile) { imageUrl in
             print("DEBUG: updateProfile started")
             let data: [String: Any] = [
                 "uid": user.uid,

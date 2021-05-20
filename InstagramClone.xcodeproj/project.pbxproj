@@ -46,6 +46,7 @@
 		68C81F8826546CAD008D3608 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F8726546CAD008D3608 /* FirebaseFirestore */; };
 		68C81F8A26546CAD008D3608 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 68C81F8926546CAD008D3608 /* FirebaseStorage */; };
 		68C81F8C26547128008D3608 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8B26547128008D3608 /* SearchViewModel.swift */; };
+		68C81F8E2656652D008D3608 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8D2656652D008D3608 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		68C81F7A26546624008D3608 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		68C81F7C26546860008D3608 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		68C81F8B26547128008D3608 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		68C81F8D2656652D008D3608 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 		68045F3C264AACFF00E998F1 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				68C81F8D2656652D008D3608 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				68C81F7D26546860008D3608 /* User.swift in Sources */,
 				68C81F5B264EBDB2008D3608 /* LoginView.swift in Sources */,
 				68C81F63265002BA008D3608 /* CustomSecureField.swift in Sources */,
+				68C81F8E2656652D008D3608 /* ProfileViewModel.swift in Sources */,
 				68C81F7526531E63008D3608 /* AuthViewModel.swift in Sources */,
 				68B498B5264AF8FC001E3CE5 /* UserCell.swift in Sources */,
 				687B34CC2649626500B9863D /* InstagramCloneApp.swift in Sources */,

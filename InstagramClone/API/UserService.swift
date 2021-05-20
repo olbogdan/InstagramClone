@@ -37,7 +37,12 @@ struct UserService {
         }
     }
 
-    static func checkIffUserIsFollowed() {}
+    static func checkIffUserIsFollowed(uid: String, completion: @escaping (Bool) -> Void) {
+        guard let following = getFollowingDocumentOfCurrentUser(to: uid) else { return }
+        following.getDocument { snapshot, _ in
+            completion(snapshot?.exists == true)
+        }
+    }
 
     private static func getFollowingDocumentOfCurrentUser(to uid: String) -> DocumentReference? {
         guard let currentUid = AuthViewModel.shared.userSession?.uid else { return nil }

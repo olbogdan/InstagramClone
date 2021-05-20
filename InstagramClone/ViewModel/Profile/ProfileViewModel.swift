@@ -12,6 +12,7 @@ class ProfileViewModel: ObservableObject {
     
     init(user: User) {
         self.user = user
+        checkIfUserIsFollowed()
     }
     
     func follow() {
@@ -36,5 +37,10 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
-    func checkIfUserIsFollowed() {}
+    func checkIfUserIsFollowed() {
+        guard !user.isCurrentUser else { return }
+        UserService.checkIffUserIsFollowed(uid: user.uid) { isFollowed in
+            self.user.isFollowed = isFollowed
+        }
+    }
 }

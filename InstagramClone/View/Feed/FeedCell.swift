@@ -5,57 +5,57 @@
 //  Created by bogdanov on 11.05.21.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct FeedCell: View {
     var geometryProxy: GeometryProxy
-    
+    var post: Post
+
     var body: some View {
-        
-            VStack(alignment: .leading) {
-                //user info
-                HStack {
-                    Image("img5")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 36, height: 36)
-                        .clipped()
-                        .cornerRadius(18)
-                    
-                    Text("joker")
-                        .font(.system(size: 14, weight: .semibold))
-                }
-                .padding([.leading, .bottom], 8)
-                
-                // post image
-                Image("img1")
+        VStack(alignment: .leading) {
+            // user info
+            HStack {
+                KFImage(URL(string: post.ownerImageUrl))
                     .resizable()
                     .scaledToFill()
-                    .frame(width: geometryProxy.size.width)
-                    .frame(maxHeight: 440)
+                    .frame(width: 36, height: 36)
                     .clipped()
-                
-                
-                // action buttons
-                ActionButtonsView()
-                
-                // caption
-                
-                Text("3 likes")
+                    .cornerRadius(18)
+
+                Text(post.ownerUserName)
                     .font(.system(size: 14, weight: .semibold))
-                    .padding(.leading, 8)
-                    .padding(.bottom, 4)
-                
-                DescriptionView()
-                
-                Text("2d")
-                    .font(.system(size: 14))
-                    .foregroundColor(.gray)
-                    .padding([.leading], 8)
             }
+            .padding([.leading, .bottom], 8)
+
+            // post image
+            KFImage(URL(string: post.imageUrl))
+                .resizable()
+                .scaledToFill()
+                .frame(width: geometryProxy.size.width)
+                .frame(maxHeight: 440)
+                .clipped()
+
+            // action buttons
+            ActionButtonsView()
+
+            // caption
+
+            Text("\(post.likes) likes")
+                .font(.system(size: 14, weight: .semibold))
+                .padding(.leading, 8)
+                .padding(.bottom, 4)
+
+            DescriptionView(post: post)
+
+            Text(
+                post.timestamp.dateValue().timeAgo()
+            )
+            .font(.system(size: 14))
+            .foregroundColor(.gray)
+            .padding([.leading], 8)
         }
-        
-    
+    }
 }
 
 struct ActionButtonsView: View {
@@ -89,20 +89,24 @@ struct ActionButtonsView: View {
 }
 
 struct DescriptionView: View {
+    var post: Post
+
     var body: some View {
         Group {
-            Text("Doctor").font(.system(size: 14, weight: .semibold))
-                + Text(" Healthy and beauty, be in a correct place in correct time.")
+            Text(post.ownerUserName).font(.system(size: 14, weight: .semibold))
+                + Text(" \(post.caption)")
                 .font(.system(size: 15))
         }.padding(.horizontal, 8)
     }
 }
 
-struct FeedCell_Previews: PreviewProvider {
-    static var previews: some View {
-        GeometryReader { geometry in
-            FeedCell(geometryProxy: geometry)
-        }
-    }
+extension Date {
+    func timeAgo() -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
+        formatter.zeroFormattingBehavior = .dropAll
+        formatter.maximumUnitCount = 1
+        return String(format: formatter.string(from: self, to: Date()) ?? "", locale: .current)
+    }
 }
-

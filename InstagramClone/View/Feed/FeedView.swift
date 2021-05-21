@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct FeedView: View {
+    @ObservedObject var viewModel = FeedViewModel()
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 LazyVStack(spacing: 32) {
-                    ForEach(0 ..< 2) { _ in
-                        FeedCell(geometryProxy: geometry)
+                    ForEach(viewModel.posts) { post in
+                        FeedCell(geometryProxy: geometry, post: post)
                     }
                 }.padding(.top)
             }

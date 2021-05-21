@@ -13,6 +13,7 @@
 		68045F44264AB27500E998F1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68045F43264AB27500E998F1 /* ProfileView.swift */; };
 		68045F46264AB32300E998F1 /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68045F45264AB32300E998F1 /* UploadPostView.swift */; };
 		68045F48264ABCA300E998F1 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68045F47264ABCA300E998F1 /* FeedCell.swift */; };
+		681838E42657F1C800A292C9 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681838E32657F1C800A292C9 /* FeedViewModel.swift */; };
 		6822D066264B423500584519 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6822D065264B423500584519 /* UserStatView.swift */; };
 		685DB3B5264C88910092F5C9 /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DB3B4264C88910092F5C9 /* ProfileActionButtonView.swift */; };
 		685DB3B7264DCE690092F5C9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DB3B6264DCE690092F5C9 /* ImagePicker.swift */; };
@@ -50,6 +51,7 @@
 		68C81F9026566A3A008D3608 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8F26566A3A008D3608 /* UserService.swift */; };
 		68C81F9226571BF9008D3608 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F9126571BF9008D3608 /* UploadPostViewModel.swift */; };
 		68C81F942657DE67008D3608 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F932657DE67008D3608 /* TextArea.swift */; };
+		68C81F962657EF69008D3608 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F952657EF69008D3608 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,7 @@
 		68045F43264AB27500E998F1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		68045F45264AB32300E998F1 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 		68045F47264ABCA300E998F1 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		681838E32657F1C800A292C9 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		6822D065264B423500584519 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		685DB3B4264C88910092F5C9 /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
 		685DB3B6264DCE690092F5C9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		68C81F8F26566A3A008D3608 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		68C81F9126571BF9008D3608 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		68C81F932657DE67008D3608 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
+		68C81F952657EF69008D3608 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				68C81F7C26546860008D3608 /* User.swift */,
+				68C81F952657EF69008D3608 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 		68045F39264AACEC00E998F1 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				681838E32657F1C800A292C9 /* FeedViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				681838E42657F1C800A292C9 /* FeedViewModel.swift in Sources */,
 				68045F40264AB23000E998F1 /* SearchView.swift in Sources */,
 				68C81F77265324BF008D3608 /* ContentView.swift in Sources */,
 				68045F42264AB24C00E998F1 /* NotificationsView.swift in Sources */,
@@ -427,6 +434,7 @@
 				68045F48264ABCA300E998F1 /* FeedCell.swift in Sources */,
 				68B498B7264AF908001E3CE5 /* UserListView.swift in Sources */,
 				68B498B9264B013C001E3CE5 /* Extensions.swift in Sources */,
+				68C81F962657EF69008D3608 /* Post.swift in Sources */,
 				68C81F8C26547128008D3608 /* SearchViewModel.swift in Sources */,
 				68045F44264AB27500E998F1 /* ProfileView.swift in Sources */,
 				68B498B3264AF6E6001E3CE5 /* PostGridView.swift in Sources */,

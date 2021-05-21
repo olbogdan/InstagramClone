@@ -9,9 +9,11 @@ import SwiftUI
 
 class SearchViewModel: ObservableObject {
     @Published var users = [User]()
+    @Published var posts = [Post]()
 
     init() {
         fetchUsers()
+        print("DEBUG: init new SearchViewModel")
     }
 
     func fetchUsers() {

@@ -13,6 +13,7 @@ struct UploadPostView: View {
     @State var captionText = ""
     @State var imagePickerPresented = false
     @ObservedObject var viewModel = UploadPostViewModel()
+    @Binding var tabIndex: Int
 
     var body: some View {
         VStack {
@@ -50,6 +51,7 @@ struct UploadPostView: View {
                             } else {
                                 postImage = nil
                                 captionText = ""
+                                tabIndex = 0
                             }
                         }
                     }
@@ -72,11 +74,5 @@ extension UploadPostView {
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         postImage = Image(uiImage: selectedImage)
-    }
-}
-
-struct UploadPostView_Previews: PreviewProvider {
-    static var previews: some View {
-        UploadPostView()
     }
 }

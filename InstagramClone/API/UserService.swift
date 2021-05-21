@@ -7,8 +7,10 @@
 
 import Firebase
 
+typealias FirestoreCompletion = ((Error?) -> Void)?
+
 struct UserService {
-    static func follow(uid: String, completion: ((Error?) -> Void)?) {
+    static func follow(uid: String, completion: FirestoreCompletion) {
         guard let following = getFollowingDocumentOfCurrentUser(to: uid) else { return }
         following.setData([:]) { error in
             if let error = error {
@@ -22,7 +24,7 @@ struct UserService {
         }
     }
 
-    static func unfollow(uid: String, completion: ((Error?) -> Void)?) {
+    static func unfollow(uid: String, completion: FirestoreCompletion) {
         guard let following = getFollowingDocumentOfCurrentUser(to: uid) else { return }
         following.delete { error in
             if let error = error {

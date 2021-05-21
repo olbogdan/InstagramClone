@@ -44,7 +44,14 @@ struct UploadPostView: View {
 
                 Button(action: {
                     if let image = selectedImage {
-                        viewModel.uploadPost(caption: captionText, image: image)
+                        viewModel.uploadPost(caption: captionText, image: image) { error in
+                            if let error = error {
+                                print("upload post error \(error)")
+                            } else {
+                                postImage = nil
+                                captionText = ""
+                            }
+                        }
                     }
                 }) {
                     Text("Share")

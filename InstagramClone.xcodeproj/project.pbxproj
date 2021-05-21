@@ -49,6 +49,7 @@
 		68C81F8E2656652D008D3608 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8D2656652D008D3608 /* ProfileViewModel.swift */; };
 		68C81F9026566A3A008D3608 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F8F26566A3A008D3608 /* UserService.swift */; };
 		68C81F9226571BF9008D3608 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F9126571BF9008D3608 /* UploadPostViewModel.swift */; };
+		68C81F942657DE67008D3608 /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C81F932657DE67008D3608 /* TextArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		68C81F8D2656652D008D3608 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		68C81F8F26566A3A008D3608 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		68C81F9126571BF9008D3608 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
+		68C81F932657DE67008D3608 /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				68C81F60264ECA72008D3608 /* CustomTextField.swift */,
 				68C81F62265002BA008D3608 /* CustomSecureField.swift */,
 				68C81F7A26546624008D3608 /* Constants.swift */,
+				68C81F932657DE67008D3608 /* TextArea.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				68045F3E264AB20B00E998F1 /* FeedView.swift in Sources */,
 				68C81F9226571BF9008D3608 /* UploadPostViewModel.swift in Sources */,
 				68B498B1264AF351001E3CE5 /* SearchBar.swift in Sources */,
+				68C81F942657DE67008D3608 /* TextArea.swift in Sources */,
 				68B498BD264B1025001E3CE5 /* NotificationCell.swift in Sources */,
 				68C81F9026566A3A008D3608 /* UserService.swift in Sources */,
 				68B498BF264B2ED9001E3CE5 /* ProfileHeaderView.swift in Sources */,

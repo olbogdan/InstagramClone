@@ -81,7 +81,7 @@ struct ActionButtonsView: View {
                     .frame(width: 20, height: 20)
                     .font(.system(size: 20))
             }
-            Button(action: {}) {
+            NavigationLink(destination: CommentView()) {
                 Image(systemName: "bubble.right")
                     .resizable()
                     .scaledToFill()

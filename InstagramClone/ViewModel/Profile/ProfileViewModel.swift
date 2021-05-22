@@ -22,6 +22,7 @@ class ProfileViewModel: ObservableObject {
             } else {
                 print("Successfully followed \(self.user.userName)")
                 self.user.isFollowed = true
+                NotificationsViewModel.uploadNotification(toUid: self.user.uid, type: .follow)
             }
         }
     }

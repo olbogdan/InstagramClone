@@ -9,6 +9,11 @@ import SwiftUI
 
 struct CommentView: View {
     @State var commentText = ""
+    @ObservedObject var viewModel: CommentsViewModel
+    
+    init (post: Post) {
+        self.viewModel = CommentsViewModel(post: post)
+    }
 
     var body: some View {
         VStack {
@@ -24,11 +29,8 @@ struct CommentView: View {
         }
     }
 
-    func uploadedComment() {}
-}
-
-struct CommentView_Preview: PreviewProvider {
-    static var previews: some View {
-        CommentView()
+    func uploadedComment() {
+        viewModel.uploadComment(commentText: commentText)
+        commentText = ""
     }
 }

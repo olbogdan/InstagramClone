@@ -1,5 +1,5 @@
 //
-//  CommentView.swift
+//  CommentsView.swift
 //  InstagramClone
 //
 //  Created by bogdanov on 22.05.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CommentView: View {
+struct CommentsView: View {
     @State var commentText = ""
     @ObservedObject var viewModel: CommentsViewModel
     
@@ -19,8 +19,8 @@ struct CommentView: View {
         VStack {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 24) {
-                    ForEach(0 ..< 10) { _ in
-                        CommentCell()
+                    ForEach(viewModel.comments) { comment in
+                        CommentCell(comment: comment)
                     }
                 }
             }.padding(.top)

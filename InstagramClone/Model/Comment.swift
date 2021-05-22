@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import FirebaseFirestoreSwift
 
 struct Comment: Identifiable, Decodable {
     @DocumentID var id: String?

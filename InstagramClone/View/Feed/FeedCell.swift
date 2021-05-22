@@ -9,27 +9,32 @@ import Kingfisher
 import SwiftUI
 
 struct FeedCell: View {
+    @ObservedObject var viewModel: FeedCellViewModel
     var geometryProxy: GeometryProxy
-    var post: Post
+
+    init(geometryProxy: GeometryProxy, viewModel: FeedCellViewModel) {
+        self.geometryProxy = geometryProxy
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
             // user info
             HStack {
-                KFImage(URL(string: post.ownerImageUrl))
+                KFImage(URL(string: viewModel.post.ownerImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 36, height: 36)
                     .clipped()
                     .cornerRadius(18)
 
-                Text(post.ownerUserName)
+                Text(viewModel.post.ownerUserName)
                     .font(.system(size: 14, weight: .semibold))
             }
             .padding([.leading, .bottom], 8)
 
             // post image
-            KFImage(URL(string: post.imageUrl))
+            KFImage(URL(string: viewModel.post.imageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: geometryProxy.size.width)
@@ -37,19 +42,19 @@ struct FeedCell: View {
                 .clipped()
 
             // action buttons
-            ActionButtonsView()
+            ActionButtonsView(viewModel: viewModel)
 
             // caption
 
-            Text("\(post.likes) likes")
+            Text(viewModel.likeString)
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 4)
 
-            DescriptionView(post: post)
+            DescriptionView(post: viewModel.post)
 
             Text(
-                post.timestamp.dateValue().timeAgo()
+                viewModel.post.timestamp.dateValue().timeAgo()
             )
             .font(.system(size: 14))
             .foregroundColor(.gray)
@@ -59,12 +64,20 @@ struct FeedCell: View {
 }
 
 struct ActionButtonsView: View {
+    @ObservedObject var viewModel: FeedCellViewModel
+    var didLike: Bool {
+        return viewModel.post.didLike ?? false
+    }
+
     var body: some View {
         HStack(spacing: 16) {
-            Button(action: {}) {
-                Image(systemName: "heart")
+            Button(action: {
+                didLike ? viewModel.unlike() : viewModel.like()
+            }) {
+                Image(systemName: didLike ? "heart.fill" : "heart")
                     .resizable()
                     .scaledToFill()
+                    .foregroundColor(didLike ? .red : .black)
                     .frame(width: 20, height: 20)
                     .font(.system(size: 20))
             }

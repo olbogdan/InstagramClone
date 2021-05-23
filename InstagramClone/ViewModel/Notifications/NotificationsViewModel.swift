@@ -10,7 +10,7 @@ import Foundation
 
 class NotificationsViewModel: ObservableObject {
     @Published var notifications = [Notification]()
-    
+
     init() {
         fetchNotifications()
     }

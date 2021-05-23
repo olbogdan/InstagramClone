@@ -16,17 +16,20 @@ struct NotificationCell: View {
 
     var body: some View {
         HStack {
-            KFImage(URL(string: viewModel.notification.profileImageUrl))
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
+            if let user = viewModel.notification.user {
+                NavigationLink(destination: ProfileView(user: user)) {
+                    KFImage(URL(string: viewModel.notification.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
 
-            Text(viewModel.notification.userName).font(.system(size: 14, weight: .semibold))
-                + Text(" \(viewModel.notification.type.notificationMessage)")
-                .font(.system(size: 15))
+                    Text(viewModel.notification.userName).font(.system(size: 14, weight: .semibold))
+                        + Text(" \(viewModel.notification.type.notificationMessage)")
+                        .font(.system(size: 15))
+                }
+            }
             Spacer()
-
             if viewModel.notification.type != .follow {
                 if let post = viewModel.notification.post {
                     KFImage(URL(string: post.imageUrl))

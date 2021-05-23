@@ -11,7 +11,7 @@ import SwiftUI
 struct NotificationCell: View {
     @ObservedObject var viewModel: NotificationCellViewModel
     private var isFollowed: Bool {
-        return  viewModel.notification.isFollowed == true
+        return viewModel.notification.isFollowed == true
     }
 
     var body: some View {
@@ -28,10 +28,13 @@ struct NotificationCell: View {
             Spacer()
 
             if viewModel.notification.type != .follow {
-                Image("img1")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
+                if let post = viewModel.notification.post {
+                    KFImage(URL(string: post.imageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                }
             } else {
                 Button(action: {
                     isFollowed ? viewModel.unfollow() : viewModel.follow()

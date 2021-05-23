@@ -10,10 +10,8 @@ import SwiftUI
 
 struct FeedCell: View {
     @ObservedObject var viewModel: FeedCellViewModel
-    var geometryProxy: GeometryProxy
 
-    init(geometryProxy: GeometryProxy, viewModel: FeedCellViewModel) {
-        self.geometryProxy = geometryProxy
+    init(viewModel: FeedCellViewModel) {
         self.viewModel = viewModel
     }
 
@@ -36,9 +34,7 @@ struct FeedCell: View {
             // post image
             KFImage(URL(string: viewModel.post.imageUrl))
                 .resizable()
-                .scaledToFill()
-                .frame(width: geometryProxy.size.width)
-                .frame(maxHeight: 440)
+                .scaledToFit()
                 .clipped()
 
             // action buttons
@@ -59,6 +55,8 @@ struct FeedCell: View {
             .font(.system(size: 14))
             .foregroundColor(.gray)
             .padding([.leading], 8)
+
+            Spacer()
         }
     }
 }

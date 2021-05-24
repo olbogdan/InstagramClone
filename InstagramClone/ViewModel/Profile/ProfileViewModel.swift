@@ -13,6 +13,7 @@ class ProfileViewModel: ObservableObject {
     init(user: User) {
         self.user = user
         checkIfUserIsFollowed()
+        fetchUserStats()
     }
     
     func follow() {
@@ -43,5 +44,52 @@ class ProfileViewModel: ObservableObject {
         UserService.checkIffUserIsFollowed(uid: user.uid) { isFollowed in
             self.user.isFollowed = isFollowed
         }
+    }
+    
+    func fetchUserStats() {
+        fetchUserFollowing()
+        fetchUserFollowers()
+        fetchUserPosts()
+    }
+    
+    func fetchUserFollowing() {
+        COLLECTION_FOLLOWING.document(user.uid)
+            .collection("user-following")
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("fetchUserFollowing user-following \(error)")
+                } else {
+                    var state = self.user.stats ?? UserStats()
+                    state.following = snapshot?.count ?? 0
+                    self.user.stats = state
+                }
+            }
+    }
+    
+    func fetchUserFollowers() {
+        COLLECTION_FOLLOWERS.document(user.uid)
+            .collection("user-followers")
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("fetchUserFollowers user-followers \(error)")
+                } else {
+                    var state = self.user.stats ?? UserStats()
+                    state.followers = snapshot?.count ?? 0
+                    self.user.stats = state
+                }
+            }
+    }
+    
+    func fetchUserPosts() {
+        COLLECTION_POSTS.whereField("ownerUid", isEqualTo: user.uid)
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("fetchUserPosts \(error)")
+                } else {
+                    var state = self.user.stats ?? UserStats()
+                    state.posts = snapshot?.count ?? 0
+                    self.user.stats = state
+                }
+            }
     }
 }

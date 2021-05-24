@@ -49,12 +49,10 @@ struct FeedCell: View {
 
             DescriptionView(post: viewModel.post)
 
-            Text(
-                viewModel.post.timestamp.dateValue().timeAgo()
-            )
-            .font(.system(size: 14))
-            .foregroundColor(.gray)
-            .padding([.leading], 8)
+            Text(viewModel.timestampString)
+                .font(.system(size: 14))
+                .foregroundColor(.gray)
+                .padding([.leading], 8)
 
             Spacer()
         }
@@ -108,16 +106,5 @@ struct DescriptionView: View {
                 + Text(" \(post.caption)")
                 .font(.system(size: 15))
         }.padding(.horizontal, 8)
-    }
-}
-
-extension Date {
-    func timeAgo() -> String {
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .full
-        formatter.allowedUnits = [.year, .month, .day, .hour, .minute, .second]
-        formatter.zeroFormattingBehavior = .dropAll
-        formatter.maximumUnitCount = 1
-        return String(format: formatter.string(from: self, to: Date()) ?? "", locale: .current)
     }
 }

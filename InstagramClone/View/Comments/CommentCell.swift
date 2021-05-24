@@ -24,7 +24,7 @@ struct CommentCell: View {
 
             Spacer()
             
-            Text("2m")
+            Text(comment.timestamp.dateValue().timeAgo())
                 .foregroundColor(.gray)
                 .font(.system(size: 12))
         }.padding(.horizontal)

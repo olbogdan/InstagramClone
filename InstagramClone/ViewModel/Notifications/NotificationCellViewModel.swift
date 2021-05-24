@@ -17,6 +17,10 @@ class NotificationCellViewModel: ObservableObject {
         fetchNotificationUser()
     }
 
+    var timestampString: String {
+        return notification.timestamp.dateValue().timeAgo()
+    }
+
     func follow() {
         UserService.follow(uid: notification.uid) { error in
             if let error = error {
@@ -52,7 +56,7 @@ class NotificationCellViewModel: ObservableObject {
             self.notification.post = try? snapshot?.data(as: Post.self)
         }
     }
-    
+
     func fetchNotificationUser() {
         COLLECTION_USERS.document(notification.uid)
             .getDocument { snapshot, _ in

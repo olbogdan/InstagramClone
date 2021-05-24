@@ -44,6 +44,7 @@ class PostGridViewModel: ObservableObject {
         }
         guard let posts = snapshot?.documents else { return }
         self.posts = posts.compactMap { try? $0.data(as: Post.self) }
+            .sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
         print("DEBUG: posts fetched, count: \(posts.count)")
     }
 }

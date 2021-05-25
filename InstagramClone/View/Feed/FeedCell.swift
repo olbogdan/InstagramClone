@@ -39,6 +39,7 @@ struct FeedCell: View {
 
             // action buttons
             ActionButtonsView(viewModel: viewModel)
+                .padding(.horizontal)
 
             // caption
 
@@ -55,7 +56,7 @@ struct FeedCell: View {
                 .padding([.leading], 8)
 
             Spacer()
-        }
+        }.padding(.vertical)
     }
 }
 

@@ -45,7 +45,7 @@ struct LoginView: View {
                     HStack {
                         Spacer()
 
-                        Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/) {
+                        NavigationLink(destination: ResetPasswordView(email: $email)) {
                             Text("Forgot passord?")
                                 .font(.system(size: 13, weight: .semibold))
                                 .foregroundColor(.white)
@@ -68,8 +68,7 @@ struct LoginView: View {
                     }
                     Spacer()
                     NavigationLink(
-                        destination: RegistrationView()
-                            .navigationBarHidden(true)) {
+                        destination: RegistrationView()) {
                             HStack {
                                 Text("Don't have an account?")
                                     .font(.system(size: 14))
@@ -79,7 +78,6 @@ struct LoginView: View {
                     }.padding(.bottom, 16)
                 }
             }
-            .navigationBarHidden(true)
         }
     }
 }

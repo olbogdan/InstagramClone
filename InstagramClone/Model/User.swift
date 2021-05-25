@@ -14,6 +14,7 @@ struct User: Decodable, Identifiable {
     let email: String
     let profileImageUrl: String
     let fullName: String
+    var bio: String?
     var isFollowed: Bool? = false
     var stats: UserStats?
 

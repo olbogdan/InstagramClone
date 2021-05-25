@@ -48,6 +48,8 @@ class AuthViewModel: ObservableObject {
             COLLECTION_USERS.document(user.uid).setData(data) { error in
                 if let error = error {
                     print("DEBUG: upload user data failed: \(error)")
+                } else {
+                    self.fetchUser()
                 }
             }
         }
@@ -65,7 +67,6 @@ class AuthViewModel: ObservableObject {
             print("Successfully registered user")
 
             self.updateProfile(user: user, withEmail: email, image: image, fullName: fullName, userName: userName)
-            self.fetchUser()
         }
     }
     

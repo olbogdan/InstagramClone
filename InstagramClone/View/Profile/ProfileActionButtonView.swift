@@ -22,7 +22,7 @@ struct ProfileActionButtonView: View {
                     .overlay(RoundedRectangle(cornerRadius: 3)
                         .stroke(Color.gray, lineWidth: 1))
             }.sheet(isPresented: $showEditProfile) {
-                EditProfileView(viewModel: EditProfileViewModel(user: viewModel.user))
+                EditProfileView(user: $viewModel.user)
             }
         } else {
             HStack {

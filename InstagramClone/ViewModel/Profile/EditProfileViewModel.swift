@@ -8,7 +8,7 @@
 import SwiftUI
 
 class EditProfileViewModel: ObservableObject {
-    private let user: User
+    var user: User
     @Published var uploadComplete = false
 
     init(user: User) {
@@ -22,6 +22,7 @@ class EditProfileViewModel: ObservableObject {
                 if let error = error {
                     print("update profile \(error)")
                 } else {
+                    self.user.bio = bio
                     self.uploadComplete = true
                 }
             }

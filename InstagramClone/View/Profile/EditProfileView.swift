@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct EditProfileView: View {
-    @State private var bioText = ""
-    @ObservedObject private var viewModel: EditProfileViewModel
     @Environment(\.presentationMode) var mode
+    @State private var bioText: String
+    @ObservedObject private var viewModel: EditProfileViewModel
+    @Binding private var user: User
 
-    init(viewModel: EditProfileViewModel) {
-        self.viewModel = viewModel
+    init(user: Binding<User>) {
+        self._user = user
+        self.viewModel = EditProfileViewModel(user: user.wrappedValue)
+        self._bioText = State(initialValue: user.wrappedValue.bio ?? "")
     }
 
     var body: some View {
@@ -35,6 +38,7 @@ struct EditProfileView: View {
         }.onReceive(viewModel.$uploadComplete, perform: { completed in
             if completed {
                 mode.wrappedValue.dismiss()
+                self.user.bio = viewModel.user.bio
             }
         })
     }

@@ -32,22 +32,10 @@ struct ResetPasswordView: View {
                     .cornerRadius(10)
                     .padding(.horizontal, 32)
 
-                HStack {
-                    Spacer()
-
-                    Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/) {
-                        Text("Forgot passord?")
-                            .font(.system(size: 13, weight: .semibold))
-                            .foregroundColor(.white)
-                            .padding(.top)
-                            .padding(.trailing, 28)
-                    }
-                }
-
                 Button(action: {
-                    viewModel.resetPassword()
+                    viewModel.resetPassword(withEmail: email)
                 }) {
-                    Text("Sign In")
+                    Text("Send reset password link")
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(minWidth: 310)
@@ -69,6 +57,8 @@ struct ResetPasswordView: View {
                     }.foregroundColor(.white)
                 }.padding(.bottom, 16)
             }
+        }.onReceive(viewModel.$didSendResetPasswordLink) { _ in
+            mode.wrappedValue.dismiss()
         }
     }
 }

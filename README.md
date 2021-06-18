@@ -1,12 +1,11 @@
-<h1 align="center">Instagram clone - Proof of concept with Swift UI</h1> <br>
+## Instagram clone - Proof of concept with Swift UI
+
+> The project was created with the purpose of studying SwiftUI capabilities.
 
 ## Technologies Used
 * Firebase Cloud Storage
 * SwiftUI
 * Swift 5.4
-
-
-The project was created with the purpose of studying SwiftUI capabilities.
 
 ## Features
 Feed:
